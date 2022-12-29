@@ -10,7 +10,8 @@ pipeline {
         }
         stage('install') {
             steps {
-                sh "mvn clean install -f DevopsRepo"
+                sh "mvn clean package"
+                //bat "mvn clean install -f DevopsRepo"
             }
         }
         stage('test') {
