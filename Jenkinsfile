@@ -13,7 +13,7 @@ pipeline {
                 //bat "mvn clean package"
                 //bat "mvn clean install -f DevopsRepo"
                 //echo "install"
-                sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+                bat 'mvn -Dmaven.test.failure.ignore=true clean package'
                 //sh 'mvn install -Dmaven.test.skip=true'
             }
         }
