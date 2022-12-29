@@ -19,8 +19,8 @@ pipeline {
         }
         stage('test') {
             steps {
-                //bat "mvn test -f DevopsRepo"
-                echo "test"
+                bat "mvn test -f DevopsRepo"
+                //echo "test"
             }
         }
         stage('package') {
