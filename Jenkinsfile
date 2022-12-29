@@ -12,8 +12,9 @@ pipeline {
             steps {
                 //bat "mvn clean package"
                 //bat "mvn clean install -f DevopsRepo"
-                bat 'nohup ./mvnw spring-boot:run -Dserver.port=8081 &'
                 //echo "install"
+                sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+                //sh 'mvn install -Dmaven.test.skip=true'
             }
         }
         stage('test') {
