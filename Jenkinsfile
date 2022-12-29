@@ -12,7 +12,7 @@ pipeline {
             steps {
                 //bat "mvn clean package"
                 //bat "mvn clean install -f DevopsRepo"
-                sh 'nohup ./mvnw spring-boot:run -Dserver.port=8081 &'
+                bat 'nohup ./mvnw spring-boot:run -Dserver.port=8081 &'
                 //echo "install"
             }
         }
