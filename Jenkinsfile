@@ -8,7 +8,7 @@ pipeline {
                 bat "mvn clean -f DevopsRepo"
             }
         }
-        stage('install') {
+        stage('build') {
             steps {
                 //bat "mvn clean package"
                 //bat "mvn clean install -f DevopsRepo"
@@ -20,7 +20,8 @@ pipeline {
         stage('test') {
             steps {
                 //bat "mvn test -f DevopsRepo"
-                bat 'mvn install -Dmaven.test.skip=true'
+                //bat 'mvn install -Dmaven.test.skip=true'
+                bat "mvn -Dmaven.test.failure.ignore=true test"
                 //echo "test"
             }
         }
