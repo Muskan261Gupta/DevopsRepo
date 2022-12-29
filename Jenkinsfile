@@ -26,8 +26,17 @@ pipeline {
         }
         stage('package') {
             steps {
-                bat "mvn package -f DevopsRepo"
+                //bat "mvn package -f DevopsRepo"
+                echo "packaging"
             }
         }
     }
+    post {
+       always {
+          junit(
+        allowEmptyResults: true,
+        testResults: '*/test-reports/.xml'
+      )
+      }
+   }
 }
